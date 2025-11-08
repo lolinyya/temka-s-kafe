@@ -72,4 +72,8 @@ class Orders
 
         return $this;
     }
+     public function getTotalPrice(): int
+    {
+        return array_sum(array_map(fn($dishes) => $dishes->getPrice(), $this->Dishes->toArray()));
+    }
 }

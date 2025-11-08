@@ -8,7 +8,7 @@
 </div>
 
 <div style="border:1px solid #ddd; padding:15px; margin-bottom:20px;">
-    <strong>Клиентов:</strong> {{ total_customers }} 
+    <strong>Клиентов:</strong> {{ total_people }} 
     <a href="{{ path('app_people_index') }}" style="margin-left:10px;">все</a>
 </div>
 
@@ -19,10 +19,10 @@
 
 <h3>Последние заказы</h3>
 <ul style="list-style:none; padding:0; margin:0;">
-    {% for order in recent_orders %}
+    {% for orders in recent_orders %}
         <li style="padding:8px; border-bottom:1px solid #eee;">
-            #{{ order.id }} — {{ order.customer.name }} — {{ order.totalPrice }} руб.
-            <a href="{{ path('app_orders_index', {id: order.id}) }}" style="margin-left:10px; color:#007bff;">→</a>
+            #{{ orders.id }} — {{ orders.people.name }} — {{ orders.totalPrice }} руб.
+            <a href="{{ path('app_orders_index', {id: orders.id}) }}"></a>
         </li>
     {% else %}
         <li style="padding:8px; color:#999;">Нет заказов</li>

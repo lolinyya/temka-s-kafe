@@ -13,7 +13,7 @@
         <th style="padding:10px; border:1px solid #ddd; text-align:left;">Телефон</th>
         <th style="padding:10px; border:1px solid #ddd; text-align:left;">Блюда</th>
         <th style="padding:10px; border:1px solid #ddd; text-align:left;">Сумма</th>
-        <th style="padding:10px; border:1px solid #ddd; text-align:left;"></th>
+        <th style="padding:10px; border:1px solid #ddd; text-align:left;">Действие</th>
     </tr>
     {% for orders in orders %}
         <tr>
@@ -27,7 +27,7 @@
             </td>
             <td style="padding:10px; border:1px solid #ddd; font-weight:bold;">{{ orders.totalPrice }} руб.</td>
             <td style="padding:10px; border:1px solid #ddd;">
-                <a href="{{ path('app_order_show', {id: order.id}) }}" style="color:#007bff;">подробнее</a>
+                <a href="{{ path('app_orders_show', {id: orders.id}) }}" style="color:#007bff;">подробнее</a>
             </td>
         </tr>
     {% else %}

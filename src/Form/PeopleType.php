@@ -6,15 +6,15 @@ use App\Entity\People;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class PeopleType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name')
-            ->add('phoneNumber')
-        ;
+            ->add('name', TextType::class, ['label' => 'Имя клиента'])
+            ->add('phoneNumber', TextType::class, ['label' => 'Телефон']);;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
